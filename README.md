@@ -1,4 +1,4 @@
-# 🛒 AktMart — MERN Stack Product Store
+# 🛒 AktMart — MERN Stack Product Store (Under Development)
 
 AktMart is a full-stack MERN application where users can create, view, update, and delete products.  
 It uses **MongoDB, Express.js, React (Vite), Zustand, and Chakra UI** for a clean, modern UI and smooth state management.
@@ -7,14 +7,14 @@ It uses **MongoDB, Express.js, React (Vite), Zustand, and Chakra UI** for a clea
 
 ## 🚀 Features (Current & Upcoming)
 
-### ✅ **Backend**
+### 🗄️ **Backend**
 - Express.js API with full CRUD functionality  
 - MongoDB + Mongoose schema for products  
 - Controllers + Routes separated for clean architecture  
 - Error handling & validations  
 - Organized and deployment-friendly structure
 
-### ✅ **Frontend**
+### 🖥️ **Frontend**
 - React (Vite) frontend  
 - Chakra UI for beautiful UI components  
 - Zustand for global state management  
