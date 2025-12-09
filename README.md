@@ -35,4 +35,28 @@ It uses **MongoDB, Express.js, React (Vite), Zustand, and Chakra UI** for a clea
 ---
 
 ## 📦 Folder Structure
-
+```
+ProductStore
+ ├── Backend
+ │     ├── config
+ │     ├── controllers
+ │     ├── models
+ │     ├── routes
+ │     ├── node_modules
+ │     ├── .env
+ │     ├── package.json
+ │     ├── package-lock.json
+ │     └── server.js
+ ├── Frontend
+ │     ├── public
+ │     ├── src
+ │     ├── node_modules
+ │     ├── .gitignore
+ │     ├── eslint.config.js
+ │     ├── index.html
+ │     ├── package.json
+ │     ├── package-lock.json
+ │     ├── README.md
+ │     └── vite.config.js
+ └── .gitignore
+```
