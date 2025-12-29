@@ -10,40 +10,78 @@ export const getProducts= async (req, res) => {
         res.status(500).json({success:false, message: "server error"});
     }
 }
-export const createProduct= async (req, res) => {
-    const product = req.body; // user will send thiss data from frontend
+export const createProduct = async (req, res) => {
+  const { name, price, image } = req.body;
 
-    if(!product.name || !product.price || !product.image){
-        return res.status(400).json({success:false, message: "All fields are required"});
+  if (!name || !price || !image) {
+    return res.status(400).json({
+      success: false,
+      message: "All fields are required",
+    });
+  }
+
+  if (price <= 0) {
+    return res.status(400).json({
+      success: false,
+      message: "Price must be greater than 0",
+    });
+  }
+
+  try {
+    const product = await Product.create({ name, price, image });
+    res.status(201).json({ success: true, data: product });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Server error",
+    });
+  }
+};
+
+export const updateProduct = async (req, res) => {
+  const { id } = req.params;
+  const { name, price, image } = req.body;
+
+  if (!name || !price || !image) {
+    return res.status(400).json({
+      success: false,
+      message: "All fields are required",
+    });
+  }
+
+  if (price <= 0) {
+    return res.status(400).json({
+      success: false,
+      message: "Price must be greater than 0",
+    });
+  }
+
+  try {
+    const updatedProduct = await Product.findByIdAndUpdate(
+      id,
+      { name, price, image },
+      { new: true }
+    );
+
+    if (!updatedProduct) {
+      return res.status(404).json({
+        success: false,
+        message: "Product not found",
+      });
     }
-    const newProduct = new Product(product)
-    try{
-        await newProduct.save();
-        res.status(201).json({success:true, message: "Product created successfully", data: newProduct});     
-    }catch(error){
-        console.error("Error creating product:", error.message);
-        res.status(500).json({success:false, message: "Product creation failed"});
-    }
-}
-export const updateProduct= async (req, res) => {
-    const {id} = req.params;
 
-    const product = req.body;
+    res.status(200).json({
+      success: true,
+      data: updatedProduct,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Server error",
+    });
+  }
+};
 
-    if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(400).json({success:false, message: "Invalid product ID"});
-    }
-
-    try{
-        const updatedProduct = await Product.findByIdAndUpdate(id, product, {new: true});
-        res.status(200).json({success:true, data: updatedProduct});
-    }catch(error){
-        
-        res.status(500).json({success:false, message: "Server error"});
-    }
-
-
-}
 export const deleteProduct= async (req, res) => {
     const {id} = req.params;
     if (!mongoose.Types.ObjectId.isValid(id)) {

@@ -22,10 +22,11 @@ const HomePage = () => {
             )
             )}
           </SimpleGrid>
-          {products.length === 0 &&(
+          {products.length === 0 &&(<VStack spacing={3} py={10}>
           <Text fontSize={"xl"} textAlign={"center"} fontWeight="bold" color ="gray.500">
-            No Products Available. Please <Link href='/create' color={"teal.500"} _hover={{ textDecoration: "underline" }}> Create </Link> a new product 
+            No Products Available. Please{" "} <Link href='/create' color={"teal.500"} _hover={{ textDecoration: "underline" }}> Create </Link> a new product 
             </Text>
+            </VStack>
           )}
       </VStack>
           

@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import CreatePage from "./pages/CreatePage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import Navbar from "./components/Navbar.jsx";
-
+import CartPage from "./pages/CartPage.jsx";
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/create" element={<CreatePage/> } />
+        <Route path="/cart" element={<CartPage/> } /> 
       </Routes>
     </Box>
   );
