@@ -56,8 +56,12 @@ export const useProductStore = create((set) => ({
 
   deleteProduct: async (productId) => {
     try {
+      const token = useAuthStore.getState().token;  
       const res = await fetch(`/api/products/${productId}`, {
         method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       });
 
       const data = await res.json();
@@ -80,10 +84,13 @@ export const useProductStore = create((set) => ({
   },
   updateProduct: async (productId, updatedProduct) => {
     try {
+      const token = useAuthStore.getState().token;
       const res = await fetch(`/api/products/${productId}`, {
         method: "PUT",
         headers: {
+          
           "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(updatedProduct),
       });
