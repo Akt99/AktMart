@@ -1,11 +1,12 @@
 import { create } from "zustand";
-
+import { useAuthStore } from "./auth";  
 export const useProductStore = create((set) => ({
   products: [],
 
   setProducts: (products) => set({ products }),
 
   createProduct: async (newProduct) => {
+
     if (!newProduct.name || !newProduct.price || !newProduct.image) {
       return {
         success: false,
@@ -14,10 +15,12 @@ export const useProductStore = create((set) => ({
     }
 
     try {
+      const token = useAuthStore.getState().token;
       const res = await fetch("/api/products", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(newProduct),
       });

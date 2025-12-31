@@ -16,6 +16,12 @@ const CreatePage = () => {
   const {createProduct} = useProductStore()
 
   const handleAddProduct = async() => {
+    const productData = {
+    ...newProduct,
+    image:
+      newProduct.image ||
+      "https://via.placeholder.com/300x200?text=No+Image",
+  };
     const {success, message}= await createProduct(newProduct)
     if(!success){
       toast({

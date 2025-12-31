@@ -1,7 +1,8 @@
-import { Box, Badge, Container, Flex, Heading, HStack, Text, useColorMode, Button, IconButton} from "@chakra-ui/react"
-import { Link } from "react-router-dom";  
+import { Box, Badge, Container, Flex, Heading, HStack, Text, useColorMode, Button, IconButton, useToast} from "@chakra-ui/react"
+import { Link, replace, useNavigate } from "react-router-dom";  
 import { PlusSquareIcon } from "@chakra-ui/icons";
 
+import { useAuthStore } from "../store/auth";
 
 import { FaShoppingCart } from "react-icons/fa";
 import { useCartStore } from "../store/cart";
@@ -13,6 +14,22 @@ const Navbar = () => {
   const {colorMode, toggleColorMode} = useColorMode();
   const { cartCount } = useCartStore();
   const itemCount = cartCount();
+  const { user, logout } = useAuthStore();
+  const toast = useToast();
+  
+  const handleLogout = () => {  
+    logout();
+    toast({
+      title: "Logged out",
+      description: "You have been logged out.",
+      status: "warning",
+      duration: 3000,
+      isClosable: true,
+      position: "top",
+    });
+    Navigate("/auth",{replace:true });
+  };
+
   return (
   <Container maxW={"container.xl"}
     p={4}
@@ -63,6 +80,16 @@ const Navbar = () => {
               </Badge>
             )}
           </Box>
+          {/* Login / Logout */}
+  {user ? (
+    <Button colorScheme="red"  onClick={handleLogout}>
+      Logout
+    </Button>
+  ) : (
+    <Link to="/auth">
+      <Button colorScheme="teal">Login</Button>
+    </Link>
+  )}
   <Button onClick= {toggleColorMode}>
     {colorMode === "light" ? <IoMoon/> : <LuSun size="20"/>} 
     </Button>
