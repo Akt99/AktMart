@@ -59,26 +59,64 @@ State managed globally via Zustand
 ## 📦 Folder Structure
 ```
 ProductStore
- ├── Backend
- │     ├── config
- │     ├── controllers
- │     ├── models
- │     ├── routes
- │     ├── node_modules
- │     ├── .env
- │     ├── package.json
- │     ├── package-lock.json
- │     └── server.js
- ├── Frontend
- │     ├── public
- │     ├── src
- │     ├── node_modules
- │     ├── .gitignore
- │     ├── eslint.config.js
- │     ├── index.html
- │     ├── package.json
- │     ├── package-lock.json
- │     ├── README.md
- │     └── vite.config.js
- └── .gitignore
-```
+│
+├── Backend
+│   ├── config
+│   │   └── db.js
+│   │
+│   ├── controllers
+│   │   ├── product.controller.js
+│   │   └── auth.controller.js
+│   │
+│   ├── middleware
+│   │   └── auth.middleware.js
+│   │
+│   ├── models
+│   │   ├── product.model.js
+│   │   └── user.model.js
+│   │
+│   ├── routes
+│   │   ├── product.route.js
+│   │   └── auth.route.js
+│   │
+│   ├── .env
+│   ├── package.json
+│   ├── package-lock.json
+│   └── server.js
+│
+├── Frontend
+│   ├── public
+│   │
+│   ├── src
+│   │   ├── components
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── ProductCard.jsx
+│   │   │   └── ProtectedRoute.jsx
+│   │   │
+│   │   ├── pages
+│   │   │   ├── HomePage.jsx
+│   │   │   ├── CreatePage.jsx
+│   │   │   ├── CartPage.jsx
+│   │   │   └── AuthPage.jsx
+│   │   │
+│   │   ├── store
+│   │   │   ├── product.js
+│   │   │   ├── cart.js
+│   │   │   └── auth.js
+│   │   │
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   ├── index.html
+│   ├── eslint.config.js
+│   ├── vite.config.js
+│   ├── package.json
+│   └── package-lock.json
+│
+├── demos
+│   ├── auth-flow.mp4
+│   ├── product-crud.mp4
+│   └── cart-flow.mp4
+│
+├── .gitignore
+└── README.md
