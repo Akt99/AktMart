@@ -1,7 +1,9 @@
 # 🛒 AktMart — MERN Stack Product Store (Under Development) 
-Learning credit: Udemy</br></br></br>
-AktMart is a full-stack MERN application where users can create, view, update, and delete products.  
-It uses **MongoDB, Express.js, React (Vite), Zustand, and Chakra UI** for a clean, modern UI and smooth state management.
+## 🎓 Learning Credit
+
+<p>
+  <img src="https://img.shields.io/badge/Udemy-A435F0?style=for-the-badge&logo=udemy&logoColor=white"/>
+</p>
 
 ---
 
@@ -19,6 +21,8 @@ Controllers,
  Middleware,
  centralized error handling,
 Production-ready server setup (static frontend serving)
+<p> <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/> <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/> </p>
+
 ### 🖥️ **Frontend**
 ◉ Modern React (Vite) setup</br>
 ◉ Chakra UI for clean and responsive UI</br>
@@ -29,6 +33,8 @@ Production-ready server setup (static frontend serving)
 ◉ Dynamic Navbar with:</br>
 - Cart badge (live item count)
 - Login / Logout state 
+<p> <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/> <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white"/> <img src="https://img.shields.io/badge/Zustand-000000?style=for-the-badge&logo=react&logoColor=white"/> <img src="https://img.shields.io/badge/Chakra_UI-319795?style=for-the-badge&logo=chakraui&logoColor=white"/> </p> <p align="center"> <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="500"/> </p>
+<p> <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/> <img src="https://img.shields.io/badge/Mongoose-880000?style=for-the-badge&logo=mongoose&logoColor=white"/> 
 
 ### 🛒 Cart System:
 
