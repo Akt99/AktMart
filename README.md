@@ -1,5 +1,5 @@
 # 🛒 AktMart — MERN Stack Product Store (Under Development) 
-## 🎓 Learning Credit
+## 🎓 Learning Credit:
 
 <p>
   <img src="https://img.shields.io/badge/Udemy-A435F0?style=for-the-badge&logo=udemy&logoColor=white"/>
